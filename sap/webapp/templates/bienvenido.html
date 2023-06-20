@@ -9,10 +9,38 @@
     <h1>Bienvenido al sist de administración de Personas (SAP)</h1>
     <!-- webapp/views/bienvenido/mensajes -->
     <div> 
-        {{ msg1 }}
+        Numero de Personas: {{ num_personas }}
     </div>
+
+    <div>
+        <a href="nueva_persona">Agregar Persona</a>
+    </div>
+
     <div> 
-        {{ msg2 }}
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th colspan="3">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for persona in personas %}
+                    <tr>
+                        <td>{{ persona.id }} </td>
+                        <td>{{ persona.nombre }} {{ persona.apellido }}</td>
+                        <td>{{ persona.email }}</td>
+                        <td><a href="detalle_persona/{{persona.id}}">Ver</a></td>
+                        <td><a href="editar_persona/{{persona.id}}">Editar</a></td>
+                        <td><a href="eliminar_persona/{{persona.id}}">Eliminar</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>    
     </div>
+
+    <a href="domicilios">Ver lista de Domicilios</a>
 </body>
 </html>

@@ -56,7 +56,7 @@ ROOT_URLCONF = 'sap.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'webapp/templates'],
+        'DIRS': [BASE_DIR, 'webapp/templates', 'personas/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
